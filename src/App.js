@@ -1,8 +1,10 @@
+import { HomeScreen } from "./screens"
+
 const App = () => {
   return (
-    <div>
-      Redux Application
-    </div>
+    <>
+      <HomeScreen />
+    </>
   );
 };
 
