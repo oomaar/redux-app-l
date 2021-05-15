@@ -1,5 +1,5 @@
 const defaultState = {
-
+    user: ["No User"]
 };
 
 export default function HomeScreenReducer (state = defaultState, action) {
@@ -7,4 +7,4 @@ export default function HomeScreenReducer (state = defaultState, action) {
         default:
             return state;
     }
-} ;
+};
