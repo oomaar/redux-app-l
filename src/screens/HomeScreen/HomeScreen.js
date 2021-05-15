@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
 import { makeSelectUsers } from "../../Redux/selectors/HomeScreenSelectors";
 import Axios from "axios";
@@ -10,19 +10,22 @@ const stateSelector = createSelector(makeSelectUsers, users => ({
         users
     }));
 
-const actionDispatcher = (dispatch) => ({
+const actionDispatch = (dispatch) => ({
     setUsers: users => dispatch(setUsers(users)),
 });
 
 const HomeScreen = () => {
     const { users } = useSelector(stateSelector);
-
+    const { setUsers } = actionDispatch(useDispatch());
+    
     const fetchUsers = async () => {
         const response = await Axios.get("https://reqres.in/api/users")
         .catch(error => console.error("error: ", error));
-
-        console.log(response.data.data)
+        
+        setUsers(response.data.data);
     };
+    
+    console.log("🚀 ~ file: HomeScreen.js ~ line 19 ~ HomeScreen ~ users", users)
 
     useEffect(() => {
         fetchUsers();
