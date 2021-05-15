@@ -3,11 +3,16 @@ import { createSelector } from "reselect";
 import { makeSelectUsers } from "../../Redux/selectors/HomeScreenSelectors";
 import Axios from "axios";
 import { useEffect } from "react";
+import { setUsers } from "../../Redux/actions/HomeScreenActions";
 
 const stateSelector = createSelector(makeSelectUsers, users => ({
         // users: users,
         users
     }));
+
+const actionDispatcher = (dispatch) => ({
+    setUsers: users => dispatch(setUsers(users)),
+});
 
 const HomeScreen = () => {
     const { users } = useSelector(stateSelector);
