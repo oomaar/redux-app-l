@@ -1,5 +1,5 @@
 const defaultState = {
-    user: ["No User"]
+    users: ["No User"]
 };
 
 export default function HomeScreenReducer (state = defaultState, action) {
