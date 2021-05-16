@@ -15,7 +15,7 @@ export const Container = styled.div`
     margin: auto;
 `;
 
-export const IncBtn = styled.button`
+export const Btn = styled.button`
     border: 0;
     outline: 0;
     background: #903749;
@@ -38,25 +38,4 @@ export const IncBtn = styled.button`
 
 export const Result = styled.p`
     font-size: 30px;
-`;
-
-export const DecBtn = styled.button`
-    border: 0;
-    outline: 0;
-    background: #903749;
-    color: #fff;
-    cursor: pointer;
-    padding: 15px;
-    transition: 0.2s ease;
-    border-radius: 10px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    :hover {
-        background-color: #333;
-        transform: scale(1.3);
-    }
 `;
