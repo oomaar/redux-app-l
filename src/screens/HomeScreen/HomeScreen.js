@@ -5,12 +5,12 @@ import { makeSelectStatus, makeSelectUsers } from "../../Redux/selectors/HomeScr
 import Axios from "axios";
 import { useEffect } from "react";
 import { setStatus, setUsers } from "../../Redux/actions/HomeScreenActions";
+import { Math, UsersList } from "../../Components";
 import {
     HomeSection,
     Container,
     Button,
 } from "./styledHomeScreen";
-import { Math } from "../../Components";
 
 const stateSelector = createSelector(makeSelectUsers, users => ({
     // users: users,
@@ -56,6 +56,7 @@ const HomeScreen = () => {
                     <h4>False</h4>
                 )}
                 <Math />
+                <UsersList />
             </Container>
         </HomeSection>
     );
