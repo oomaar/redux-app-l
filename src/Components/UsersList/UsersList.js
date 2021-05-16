@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router";
 import { createSelector } from "reselect";
 import { makeSelectUsers } from "../../Redux/selectors/HomeScreenSelectors";
 import {
@@ -13,6 +14,7 @@ const stateSelector = createSelector(makeSelectUsers, users => ({ users }));
 
 const UsersList = () => {
     const { users } = useSelector(stateSelector);
+    const history = useHistory();
 
     const isEmptyUsers = !users || (users && users.length === 0);
 
@@ -20,11 +22,15 @@ const UsersList = () => {
         return null;
     };
 
+    const goToAccountScreen = id => {
+        history.push(`/user/${id}`);
+    };
+
     return (
         <UsersListSection>
             <Container>
                 {users.map((user, idx) => (
-                    <UserWrapper key={idx}>
+                    <UserWrapper key={idx} onClick={() => goToAccountScreen(user.id)}>
                         <UserImage>
                             <img src={user.avatar} alt={user.first_name} />
                         </UserImage>
