@@ -26,17 +26,17 @@ const Navbar = () => {
                     <ListItem>
                         <Link to="/">Home</Link>
                     </ListItem>
-                    <ListItem to="/services">
-                        <Link>Services</Link>
+                    <ListItem>
+                        <Link to="/services">Services</Link>
                     </ListItem>
-                    <ListItem to="/account">
-                        <Link>Account</Link>
+                    <ListItem>
+                        <Link to="/account">Account</Link>
                     </ListItem>
-                    <ListItem to="/about">
-                        <Link>About</Link>
+                    <ListItem>
+                        <Link to="/about">About</Link>
                     </ListItem>
-                    <ListItem to="/developers">
-                        <Link>Developers</Link>
+                    <ListItem>
+                        <Link to="/developers">Developers</Link>
                     </ListItem>
                 </List>
             </Container>
