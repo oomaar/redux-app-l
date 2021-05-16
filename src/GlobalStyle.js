@@ -18,4 +18,9 @@ export const GlobalStyle = createGlobalStyle`
     code {
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     }
+
+    a {
+        cursor: pointer;
+        text-decoration: none;
+    }
 `;
