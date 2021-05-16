@@ -9,6 +9,7 @@ import {
     Container,
     Button,
 } from "./styledHomeScreen";
+import { Math } from "../../Components";
 
 const stateSelector = createSelector(makeSelectUsers, users => ({
     // users: users,
@@ -53,6 +54,7 @@ const HomeScreen = () => {
                 ) : (
                     <h4>False</h4>
                 )}
+                <Math />
             </Container>
         </HomeSection>
     );
