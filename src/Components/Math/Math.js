@@ -1,8 +1,20 @@
+import {
+    MathSection,
+    Container,
+    IncBtn,
+    Result,
+    DecBtn,
+} from "./styledMath";
+
 const Math = () => {
     return (
-        <div>
-            Math
-        </div>
+        <MathSection>
+            <Container>
+                <IncBtn>+</IncBtn>
+                <Result>0</Result>
+                <DecBtn>-</DecBtn>
+            </Container>
+        </MathSection>
     );
 };
 
