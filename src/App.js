@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Navbar } from "./Components";
-import { AboutScreen, HomeScreen, ServicesScreen } from "./screens";
+import { AboutScreen, AccountScreen, HomeScreen, ServicesScreen } from "./screens";
 
 const App = () => {
   return (
@@ -9,6 +9,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={HomeScreen} />
         <Route path="/services" component={ServicesScreen} />
+        <Route path="/account" component={AccountScreen} />
         <Route path="/about" component={AboutScreen} />
       </Switch>
     </Router>
