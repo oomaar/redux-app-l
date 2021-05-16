@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { Link as RouterLink } from "react-router-dom";
 
 export const Nav = styled.nav``;
 
@@ -53,7 +54,7 @@ export const ListItem = styled.li`
     }
 `;
 
-export const Link = styled.a`
+export const Link = styled(RouterLink)`
     color: #ddd;
     font-size: 1.1rem;
     letter-spacing: 1px;

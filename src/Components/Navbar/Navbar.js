@@ -24,18 +24,18 @@ const Navbar = () => {
                 </MenuIcon>
                 <List>
                     <ListItem>
-                        <Link href="#">Home</Link>
+                        <Link to="/">Home</Link>
                     </ListItem>
-                    <ListItem href="#">
+                    <ListItem to="/services">
                         <Link>Services</Link>
                     </ListItem>
-                    <ListItem href="#">
+                    <ListItem to="/account">
                         <Link>Account</Link>
                     </ListItem>
-                    <ListItem href="#">
+                    <ListItem to="/about">
                         <Link>About</Link>
                     </ListItem>
-                    <ListItem href="#">
+                    <ListItem to="/developers">
                         <Link>Developers</Link>
                     </ListItem>
                 </List>
