@@ -1,22 +1,34 @@
 import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
-import { makeSelectUsers } from "../../Redux/selectors/HomeScreenSelectors";
+import { makeSelectStatus, makeSelectUsers } from "../../Redux/selectors/HomeScreenSelectors";
 import Axios from "axios";
 import { useEffect } from "react";
-import { setUsers } from "../../Redux/actions/HomeScreenActions";
+import { setStatus, setUsers } from "../../Redux/actions/HomeScreenActions";
+import {
+    HomeSection,
+    Container,
+    Button,
+} from "./styledHomeScreen";
 
 const stateSelector = createSelector(makeSelectUsers, users => ({
-        // users: users,
-        users
-    }));
+    // users: users,
+    users
+}));
+
+const statusSelector = createSelector(makeSelectStatus, status => ({
+    status
+}))
 
 const actionDispatch = (dispatch) => ({
     setUsers: users => dispatch(setUsers(users)),
+    setStatus: status => dispatch(setStatus(status)),
 });
 
 const HomeScreen = () => {
     const { users } = useSelector(stateSelector);
     const { setUsers } = actionDispatch(useDispatch());
+    const { status } = useSelector(statusSelector);
+    const { setStatus } = actionDispatch(useDispatch());
     
     const fetchUsers = async () => {
         const response = await Axios.get("https://reqres.in/api/users")
@@ -26,15 +38,23 @@ const HomeScreen = () => {
     };
     
     console.log("🚀 ~ file: HomeScreen.js ~ line 19 ~ HomeScreen ~ users", users)
-
+    
     useEffect(() => {
         fetchUsers();
-    }, [])
-
+    }, []);
+    
+    const handleClick = () => setStatus(!status);
     return (
-        <div>
-            HomeScreen
-        </div>
+        <HomeSection>
+            <Container>
+                <Button onClick={handleClick}>Click Me</Button>
+                {status ? (
+                    <h1>True</h1>
+                ) : (
+                    <h4>False</h4>
+                )}
+            </Container>
+        </HomeSection>
     );
 };
 
