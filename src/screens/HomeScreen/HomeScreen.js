@@ -39,13 +39,12 @@ const HomeScreen = () => {
         setUsers(response.data.data);
     };
     
-    console.log("🚀 ~ file: HomeScreen.js ~ line 19 ~ HomeScreen ~ users", users)
-    
     useEffect(() => {
         fetchUsers();
     }, []);
     
     const handleClick = () => setStatus(!status);
+    // console.log("🚀 ~ file: HomeScreen.js ~ line 31 ~ HomeScreen ~ users", users)
     return (
         <HomeSection>
             <Container>

@@ -26,8 +26,7 @@ const Math = () => {
     const handleIncrement = () => setIncrement(number + 1);
     const handleDecrement = () => setDecrement(number - 1);
     const handleByTen = () => setByTen(number + 10);
-    
-    console.log("🚀 ~ file: Math.js ~ line 21 ~ Math ~ inc", number)
+
     return (
         <MathSection>
             <Container>
