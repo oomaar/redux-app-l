@@ -1,7 +1,8 @@
 import { ActionTypes } from "../constants/HomeScreenConstants";
 
 const defaultState = {
-    users: ["No User"]
+    users: ["No User"],
+    status: false,
 };
 
 export default function HomeScreenReducer (state = defaultState, action) {
@@ -11,6 +12,12 @@ export default function HomeScreenReducer (state = defaultState, action) {
                 ...state,
                 users: action.payload
             };
+
+        case ActionTypes.SET_STATUS:
+            return {
+                ...state,
+                status: action.payload
+            }
 
         default:
             return state;
