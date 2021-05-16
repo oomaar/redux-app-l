@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Navbar } from "./Components";
-import { HomeScreen } from "./screens";
+import { AboutScreen, HomeScreen, ServicesScreen } from "./screens";
 
 const App = () => {
   return (
@@ -8,6 +8,8 @@ const App = () => {
       <Navbar />
       <Switch>
         <Route exact path="/" component={HomeScreen} />
+        <Route path="/services" component={ServicesScreen} />
+        <Route path="/about" component={AboutScreen} />
       </Switch>
     </Router>
   );
